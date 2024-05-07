@@ -4,7 +4,7 @@ import React from 'react'
 
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { GoogleTagManager } from '@next/third-parties/google';
+import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google';
 import { AnalyticsManager } from '@/managers/analytics';
 
 const inter = Inter({ subsets: ["latin"] });
@@ -14,7 +14,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const GTM_ID = 'G-GMP3GJNCQP'
+  const GA_ID = 'G-GMP3GJNCQP'
+  const GTM_ID = "GTM-KH25H6Z9"
 
   React.useEffect(() => {
       AnalyticsManager.view_plantdetail({
@@ -27,6 +28,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>{children}
       <GoogleTagManager gtmId={GTM_ID} /> 
+      <GoogleAnalytics gaId={GA_ID} />
       </body>
     </html>
   );

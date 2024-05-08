@@ -26,6 +26,9 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+        <meta name="google-site-verification" content="-bNmD_cjUf9Zgt5Kl4q6N86jiist513T7BNDj5tO-Zg" />
+      </head>
       <body className={inter.className}>{children}
       <GoogleTagManager gtmId={GTM_ID} /> 
       <GoogleAnalytics gaId={GA_ID} />
